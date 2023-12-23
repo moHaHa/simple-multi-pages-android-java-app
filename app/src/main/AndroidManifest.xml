@@ -11,6 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RmmmDates"
-        tools:targetApi="31" />
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <category  android:name="android.intent.category.LAUNCHER"></category>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+
+        </activity>
+    </application>
 
 </manifest>
