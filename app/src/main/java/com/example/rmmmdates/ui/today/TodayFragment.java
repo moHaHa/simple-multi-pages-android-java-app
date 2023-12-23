@@ -1,4 +1,4 @@
-package com.example.rmmmdates.ui.dashboard;
+package com.example.rmmmdates.ui.today;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.rmmmdates.databinding.FragmentDashboardBinding;
+import com.example.rmmmdates.databinding.FragmentTodayBinding;
 
-public class DashboardFragment extends Fragment {
+public class TodayFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentTodayBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        TodayViewModel todayViewModel =
+                new ViewModelProvider(this).get(TodayViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentTodayBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textToday;
+        todayViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

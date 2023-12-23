@@ -1,4 +1,4 @@
-package com.example.rmmmdates.ui.notifications;
+package com.example.rmmmdates.ui.all;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.rmmmdates.databinding.FragmentNotificationsBinding;
+import com.example.rmmmdates.databinding.FragmentAllBinding;
 
-public class NotificationsFragment extends Fragment {
+public class AllFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentAllBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        AllViewModel allViewModel =
+                new ViewModelProvider(this).get(AllViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentAllBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAll;
+        allViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
